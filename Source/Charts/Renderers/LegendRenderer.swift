@@ -535,6 +535,17 @@ open class LegendRenderer: Renderer
             context.setFillColor(formColor.cgColor)
             context.fill(CGRect(x: x, y: y - formSize / 2.0, width: formSize, height: formSize))
             
+        case .triangle:
+            context.setFillColor(formColor.cgColor)
+            
+            // create a triangle path
+            context.beginPath()
+            context.move(to: CGPoint(x: x + formSize / 2.0, y: y - formSize / 2.0))
+            context.addLine(to: CGPoint(x: x + formSize * 1.1, y: y + formSize / 2.0))
+            context.addLine(to: CGPoint(x: x - formSize / 10.0, y: y + formSize / 2.0))
+            context.closePath()
+            context.fillPath()
+            
         case .line:
             
             let formLineWidth = entry.formLineWidth.isNaN ? legend.formLineWidth : entry.formLineWidth

@@ -37,6 +37,9 @@ open class Legend: ComponentBase
         /// Draw a circle
         case circle
         
+        /// Draw a triangle
+        case triangle
+        
         /// Draw a horizontal line
         case line
     }
