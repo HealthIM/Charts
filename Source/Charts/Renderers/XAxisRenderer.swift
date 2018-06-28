@@ -239,14 +239,9 @@ open class XAxisRenderer: AxisRendererBase
                     }
                 }
                 
-                var x_adjustment = 0.0
-                if labelRotationAngleRadians != 0 {
-                    x_adjustment = 10.0
-                }
-                
                 drawLabel(context: context,
                           formattedLabel: label,
-                          x: position.x - CGFloat(x_adjustment),
+                          x: position.x - CGFloat(labelRotationAngleRadians * -10),
                           y: pos,
                           attributes: labelAttrs,
                           constrainedToSize: labelMaxSize,
